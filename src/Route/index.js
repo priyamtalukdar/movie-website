@@ -6,11 +6,15 @@ import MoviesContainer from '../Container/Movies';
 import TvSeriesContainer from '../Container/TvSeries';
 import SearchContainer from '../Container/Search';
 import DetailsContainer from '../Container/Details';
-
+import ContactContainer from '../Container/Contact';
+import HeaderComponents from '../Components/Header';
+import FooterComponents from '../Components/Footer';
 const RouterComponents =()=>{
     return(
         <>
+
           <BrowserRouter>
+          <HeaderComponents />
             <Routes>
 
             <Route path ="/" element={<HomeContainer />} />
@@ -18,9 +22,11 @@ const RouterComponents =()=>{
             <Route path ="/movies" element={<MoviesContainer />} />
             <Route path ="/series" element={<TvSeriesContainer />} />
             <Route path ="/search" element={<SearchContainer />} />
+            <Route path ="/contact" element={<ContactContainer />} />
             <Route path ="/details/:movieid/:/mediatype" element={<DetailsContainer />} />
 
             </Routes>
+            <FooterComponents />
           </BrowserRouter>
         </>
     )
